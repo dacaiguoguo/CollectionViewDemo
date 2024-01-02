@@ -115,7 +115,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    @objc func reloadSections() {
+    func reloadSections() {
         // reloadSections为了去掉闪一下动画，不太精准，插入的数据没有动画了，交互不太友好
         UIView.animate(withDuration: 0.0) {
             // 刷新集合视图
@@ -130,7 +130,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    @objc func insertItems() {
+    func insertItems() {
         // insertItems控制精准，更合适，交互更友好
         self.collectionView.performBatchUpdates {
             // 在数据源中插入新的数据
