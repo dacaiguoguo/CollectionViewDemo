@@ -1,5 +1,5 @@
 ### performBatchUpdates 崩溃测试
-insertItems和数据的append，不一致就会导致崩溃，如下
+`insertItems`或者`reloadSections`时如果和数据的修改不一致就会导致崩溃，如下
 ```
         self.collectionView.performBatchUpdates {
             // 在数据源中插入新的数据
@@ -14,4 +14,4 @@ insertItems和数据的append，不一致就会导致崩溃，如下
         }
 ```
 
-如果你想要在 UICollectionView 中插入新的行而不是整个重新加载某个 section，可以使用 `insertItems` 方法。这可以提供更好的用户交互效果，而不会导致整个 section 重新加载，从而减少了闪烁的问题
+如果你想要在 UICollectionView 中插入新的行而不是整个重新加载某个 section，建议使用 `insertItems` 方法。这可以提供更好的用户交互效果，而`reloadSections`会导致整个 section 重新加载，从而有闪烁的问题。
